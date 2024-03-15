@@ -2,6 +2,7 @@ package com.example.kmldatastructure.geographical
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.kmldatastructure.MyViewModel
 import com.example.kmldatastructure.R

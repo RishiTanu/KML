@@ -21,7 +21,7 @@ class MyViewModel : ViewModel() {
     val postResult: StateFlow<Resource<String>> = _postResult
 
     fun postXml(xmlData: String) {
-        viewModelScope.launch {
+        /*viewModelScope.launch {
             val requestBody = xmlData.toRequestBody("application/xml".toMediaType())
             try {
                 val response = myApiService.postXmlData(requestBody)
@@ -34,6 +34,6 @@ class MyViewModel : ViewModel() {
             } catch (e: Exception) {
                 _postResult.value = Resource.Error(e.message ?: "An error occurred")
             }
-        }
+        }*/
     }
 }
