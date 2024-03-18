@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".other.SpinnerActivity">
+
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="30dp"
+        android:id="@+id/my_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/spinner_background"
+    android:spinnerMode="dropdown"
+    android:popupBackground="@drawable/dropdown_background"
+    android:dropDownVerticalOffset="5dp"
+    android:dropDownSelector="@drawable/dropdown_selector"
+    android:dropDownWidth="wrap_content"
+    android:gravity="center"
+    android:padding="8dp"
+    app:popupTheme="@style/SpinnerDropDownTheme" />
+
+
+
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/notificationSwitch"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:thumb="@drawable/custom_thumb"
+        android:track="@drawable/custom_track"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

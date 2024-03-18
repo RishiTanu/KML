@@ -6,4 +6,12 @@
     </style>
 
     <style name="Theme.KMLDataStructure" parent="Base.Theme.KMLDataStructure" />
+
+    <style name="SpinnerDropDownTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your spinner dropdown theme here -->
+        <!-- Example: Change the dropdown item text color -->
+        <item name="android:textColor">#FF0000</item>
+        <!-- You can also customize other attributes like text size -->
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>
