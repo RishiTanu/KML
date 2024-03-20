@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iconPlane"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_action_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID: 35"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/iconPlane"
+            app:layout_constraintTop_toTopOf="@id/iconPlane"
+            app:layout_constraintBottom_toBottomOf="@id/iconPlane"
+            android:layout_marginStart="8dp"/>
+
+        <TextView
+            android:id="@+id/tvModelNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model Number: N5623"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@id/iconPlane"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvTailNumberLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tail Number"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/iconPlane"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvCallSignLabel"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/tvTailNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="N1253F"
+            app:layout_constraintStart_toStartOf="@id/tvTailNumberLabel"
+            app:layout_constraintEnd_toStartOf="@id/tvCallSignLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvTailNumberLabel"/>
+
+        <TextView
+            android:id="@+id/tvCallSignLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Call Sign"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/iconPlane"
+            app:layout_constraintStart_toEndOf="@id/tvTailNumber"
+            app:layout_constraintEnd_toStartOf="@id/tvHelicopterTypeLabel"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <TextView
+            android:id="@+id/tvCallSign"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="N1253F"
+            app:layout_constraintStart_toStartOf="@id/tvCallSignLabel"
+            app:layout_constraintEnd_toStartOf="@id/tvHelicopterTypeLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvCallSignLabel"/>
+
+        <TextView
+            android:id="@+id/tvHelicopterTypeLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Helicopter Type"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/iconPlane"
+            app:layout_constraintStart_toEndOf="@id/tvCallSign"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <TextView
+            android:id="@+id/tvHelicopterType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="172N Skyhawk (C123)"
+            app:layout_constraintStart_toStartOf="@id/tvHelicopterTypeLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHelicopterTypeLabel"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

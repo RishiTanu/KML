@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/iconAirport"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_action_name"
+        android:contentDescription=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvAirportName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="KFLL: Fort Lauderdale/Hollywood International"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/iconAirport"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iconAirport"
+        app:layout_constraintBottom_toBottomOf="@id/iconAirport"
+        android:layout_marginStart="8dp"/>
+
+    <TextView
+        android:id="@+id/tvElevationAndFrequency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="65' MSL, Tower 119.3, Tower 120.2"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/iconAirport"
+        app:layout_constraintEnd_toEndOf="@id/tvAirportName"
+        app:layout_constraintTop_toBottomOf="@id/iconAirport"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:id="@+id/tvVisibility"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="2500 at 3kts, 16km"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tvElevationAndFrequency"
+        app:layout_constraintEnd_toEndOf="@id/tvElevationAndFrequency"
+        app:layout_constraintTop_toBottomOf="@id/tvElevationAndFrequency"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:id="@+id/tvPressureAndTemperature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="29.99 InHg (1016 hPa), 21°C (70°F)"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tvVisibility"
+        app:layout_constraintEnd_toEndOf="@id/tvVisibility"
+        app:layout_constraintTop_toBottomOf="@id/tvVisibility"
+        android:layout_marginTop="4dp"/>
+
+    <ImageView
+        android:id="@+id/iconClock"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_action_name"
+        android:contentDescription="app name"
+        app:layout_constraintBottom_toBottomOf="@id/tvPressureAndTemperature"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvPressureAndTemperature"/>
+
+    <TextView
+        android:id="@+id/tvDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="07-Feb-2024 02:25am"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tvPressureAndTemperature"
+        app:layout_constraintEnd_toStartOf="@id/iconClock"
+        app:layout_constraintTop_toTopOf="@id/iconClock"
+        android:layout_marginEnd="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

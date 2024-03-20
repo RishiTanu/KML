@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/tvMonth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="January 2024"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvDate"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="07-Feb-2024"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvMonth"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvRoute"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="KPMP To KPMP (IFR)"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvAltitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="6000' MSL IN N737BA"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvRoute"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvEta"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:id="@+id/tvEta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ETA 1124Z"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvAltitude"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvEtd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ETD 1125Z"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvFlightType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Direct"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvAltitude"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
