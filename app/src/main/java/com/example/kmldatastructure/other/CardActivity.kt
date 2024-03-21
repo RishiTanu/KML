@@ -5,15 +5,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.CheckBox
+import android.widget.FrameLayout
+import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.kmldatastructure.R
 import com.google.android.material.tabs.TabLayout
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class CardActivity : AppCompatActivity() {
-
+    private lateinit var uiHelper: UIHelper
     // Initialize an array to hold the check state of each spinner item
     private lateinit var itemCheckedStates: BooleanArray
     // Track the index of the currently selected item
@@ -58,6 +67,66 @@ class CardActivity : AppCompatActivity() {
 
         mySpinner.adapter = adapter
         tabview()
+
+        uiHelper = UIHelper(this)
+        // Create a CoroutineScope with Dispatchers.Main
+        val coroutineScope = CoroutineScope(Dispatchers.Main)
+
+        // Launch a coroutine within the created scope
+        coroutineScope.launch {
+            // Perform some asynchronous operations
+            delay(1000) // Simulating some background work
+
+            // Update UI or perform other main thread related operations
+            println("Coroutine finished on ${Thread.currentThread().name}")
+            someOperation()
+        }
+
+
+
+        val spinnerItems = listOf(
+            SpinnerItem("Item 1", R.drawable.ic_launcher_background), // Replace with actual data and drawable resources
+            SpinnerItem("Item 2", R.drawable.ic_launcher_background),
+            SpinnerItem("Item 2", R.drawable.ic_launcher_background),
+            SpinnerItem("Item 2", R.drawable.ic_launcher_background)
+            // Add more items as needed
+        )
+
+        val spinner: Spinner = findViewById(R.id.spinner_navigation)
+        val adapter11 = CustomSpinnerAdapter(this, spinnerItems)
+        spinner.adapter = adapter11
+
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: android.view.View?, position: Int, id: Long) {
+                // Get the selected item
+                val selectedItem = spinnerItems[position]
+
+                // Handle the selection
+                // Example: Show a Toast or update the UI based on the selection
+                showToast("Selected: ${selectedItem.text}")
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Optionally handle the case where nothing is selected, if needed
+            }
+        }
+    }
+    private fun showToast(message: String) {
+        android.widget.Toast.makeText(this, message, android.widget.Toast.LENGTH_SHORT).show()
+    }
+    suspend  fun someOperation() {
+        uiHelper.showProgressBar()
+        getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+      //  uiHelper.hideProgressBar()
+        hide()
+    }
+
+    private suspend fun hide(){
+        delay(5000)
+        uiHelper.hideProgressBar()
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
     }
 
     private fun tabview(){
