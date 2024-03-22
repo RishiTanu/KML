@@ -1,8 +1,10 @@
 package com.example.kmldatastructure
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.activity.OnBackPressedCallback
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -37,5 +39,27 @@ class DrawerRightActivity2 : AppCompatActivity() {
         findViewById<View>(R.id.drawer_layout)?.setOnClickListener {
             drawerLayout.openDrawer(navigationView)
         }
+    }
+
+    private fun showCustomLogoutDialog() {
+        // Create the custom dialog
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.logout)
+
+        // Initialize dialog components
+        val btnCancel: Button = dialog.findViewById(R.id.btnCancel)
+        val btnOk: Button = dialog.findViewById(R.id.btnOk)
+
+        // Close the dialog on "Cancel"
+        btnCancel.setOnClickListener { dialog.dismiss() }
+
+        // Perform logout logic and close dialog on "OK"
+        btnOk.setOnClickListener {
+            // Implement your logout logic here
+           // logOutUser()
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 }
